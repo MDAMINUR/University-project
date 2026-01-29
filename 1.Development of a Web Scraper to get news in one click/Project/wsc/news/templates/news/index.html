@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Scraper</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: white;
+}
+.h1 {
+  height: 100%; 
+  width: 30%;
+  padding: 14px 16px;
+  font-size: 40px;
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 25px;
+}
+</style>
+
+</head>
+<body>
+    <div class="jumbotron">
+        <center><h1 class="h1"> Get news in one click </h1>
+           
+    </center>
+    </div>
+
+    <ul>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href="{% url 'bdnews24' %}">BdNews24</a></li>
+    </ul>
+    <div></br></br></br></div>
+    <div class="container">
+      <div class="w3-container">
+            <div class="col-6">
+                    <h2 class=" text-centre"> News from {{name}}</h2>
+                    
+                    {% for p in post %}
+                    <div class="w3-panel w3-pale-green w3-leftbar w3-sand ">
+                    <p>
+                    <!-- <h3> <a href="{{ p.link | safe }}"> {{p.title}}</a> </h3> -->
+                    <h3> {{p.title}}</a> </h3>
+                    <p> {{p.created_on|date:"D d M Y" }} </p>
+                    </p>
+          
+                  </div>
+                    {% endfor %}
+                    
+            </div>
+            
+            
+        </div>
+ 
+ 
+</div>
+    <script
+src="http://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
